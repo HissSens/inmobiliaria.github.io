@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casas y Departamentos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="../index.html" class="logo">🏠 Inicio</a>
+            <button class="cart-btn" onclick="toggleCart()">
+                🛒 Carrito
+                <span class="cart-count" id="cartCount">0</span>
+            </button>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Encuentra tu hogar ideal</h1>
+            <p>Descubre las mejores propiedades en las ubicaciones más exclusivas</p>
+        </div>
+    </section>
+
+    <section class="search-section">
+        <div class="container">
+            <div class="search-container">
+                <form id="searchForm" class="search-form">
+                    <div class="form-group">
+                        <label for="propertyType">Tipo de Propiedad</label>
+                        <select id="propertyType">
+                            <option value="">Todos</option>
+                            <option value="casa">Casa</option>
+                            <option value="departamento">Departamento</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="location">Ubicación</label>
+                        <select id="location">
+                            <option value="">Todas las ubicaciones</option>
+                            <option value="cdmx">Ciudad de México</option>
+                            <option value="guadalajara">Guadalajara</option>
+                            <option value="monterrey">Monterrey</option>
+                            <option value="puerto-vallarta">Puerto Vallarta</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="maxPrice">Precio máximo</label>
+                        <input type="number" id="maxPrice" placeholder="Ingresa el precio máximo">
+                    </div>
+
+                    <button type="submit" class="search-btn">🔍 Buscar</button>
+                </form>
+                <div id="searchResultsInfo" class="search-results-info"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="properties-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Propiedades Destacadas</h2>
+                <p>Explora nuestra selección de propiedades premium</p>
+            </div>
+            <div class="properties-grid" id="propertiesGrid"></div>
+        </div>
+    </section>
+
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h2>Carrito de Compras</h2>
+                <button class="close-cart" onclick="toggleCart()">✕</button>
+            </div>
+            <div id="cartItems"></div>
+            <div class="cart-total">
+                <h3>Total: <span id="totalAmount">$0</span></h3>
+                <button class="checkout-btn" onclick="checkout()">Proceder al Pago</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="carousel-modal" id="carouselModal">
+        <div class="carousel-content">
+            <button class="close-carousel" onclick="closeCarousel()">✕</button>
+            <div class="carousel">
+                <div class="carousel-images" id="carouselImages"></div>
+                <button class="carousel-prev" onclick="prevImage()">◄</button>
+                <button class="carousel-next" onclick="nextImage()">►</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
